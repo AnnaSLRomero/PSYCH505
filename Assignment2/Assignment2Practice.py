@@ -82,11 +82,12 @@ about_me = {'name':'Anna',
 pp.pprint(about_me)
 print(len(about_me))
 #makes length by the type of things that there, so the list is one item
-
+print(type(about_me))
 ##Array exercises
 mixnums = np.array([1, 2, 3, 4.0, 5.0, 6.0])
 print(mixnums)
 #numbers now have decimals after the whole number, but no zero after.
+print(type(mixnums))
 
 mixtypes = np.array([1, 2, 3.0, 4.0, '5', '6'])
 print(mixtypes)
