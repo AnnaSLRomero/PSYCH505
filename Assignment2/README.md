@@ -15,7 +15,7 @@ import pprint as pp
 ```
 No, the variables did not show up in the variable editor.
 
-This is my [youname.py](https://github.com/AnnaSLRomero/PSYCH505/blob/main/Assignment2/yourname.py) file.
+This is my [yourname.py](https://github.com/AnnaSLRomero/PSYCH505/blob/main/Assignment2/yourname.py) file.
 
 ## Operation Exercises
 
