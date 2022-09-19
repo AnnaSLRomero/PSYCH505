@@ -6,6 +6,7 @@ Created on Mon Sep 19 08:58:16 2022
 @author: annaromero
 """
 import numpy as np
+import pprint as pp
 #Print exercises
 print("A")
 print("N")
@@ -55,7 +56,8 @@ print(5 == (3+2))
 print((1 == 1.0) and not ("1" == "1.0") and (5 == (3+2)))
 print((1 == 1.0) and ("1" != "1.0") and not (5 != (3+2)))
 print((1 == 1.0) and not ("1" == "1.0") or (5 != (3+2)))
-print((1 == 1.0) and not ("1" == "1.0") or (5 != (3+2)))
+print((1 == 1.0) or ("1" != "1.0") and (5 == (3+2)))
+print((1 == 1.0) and ("1" != "1.0") or (5 == (3+2)))
 
 ##List exercises
 oddlist = [1, 3, 5, 7, 9]
@@ -68,15 +70,16 @@ print(len(oddlist))
 print(type(oddlist))
 #list
 
-intlist = list(range(100))
+intlist = list(range(1, 100))
 print(intlist)
 
 ##Dicitionary exercises
-about_me = {'name':"Anna", 
+about_me = {'name':'Anna', 
             'age':23.0, 
-            'year of study':1, 
-            'favorite foods': list["chocolate almonds", "spaghetti", "coffee"]}
-print(about_me)
+            'studyYear': 17, 
+            'faves': ["chocolate almonds", "spaghetti", "coffee"],
+            }
+pp.pprint(about_me)
 print(len(about_me))
 #makes length by the type of things that there, so the list is one item
 
@@ -92,5 +95,5 @@ print(mixtypes)
 oddarray = np.arange(0, 100, 3)
 print(oddarray)
 
-logarray = np.linspace(1, 5, 16)
+logarray = np.logspace(1, 5, 16)
 print(logarray)
