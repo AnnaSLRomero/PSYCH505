@@ -1,3 +1,6 @@
+# Assignment 2
+### Anna Romero
+
 ```
 import numpy as np
 import pprint as pp
