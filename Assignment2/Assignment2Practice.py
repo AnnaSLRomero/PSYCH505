@@ -16,7 +16,7 @@ print("A")
 #no not show up in variable editor
 
 letter1 = "A"
-letterX = "K"
+letter2 = "N"
 letter3 = "N"
 letter4 = "A"
 #yes show up in variable editor
