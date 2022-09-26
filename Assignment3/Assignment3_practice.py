@@ -33,5 +33,39 @@ numarr*2
 #list multiplies the 1,2,3 twice therefore doubling the length, 
 #while in an array the values multiplied by 2, so same length, but the values have changed to 2,4,6.
 
+#### STRUGGLING WITH THIS ONE!!
 strlist = ['do', 're', 'mi', 'fa']
 
+print(strlist * 2)
+
+print(strlist + strlist)
+
+#zipping - check if this is correct
+faces = ['face1.png', 'face2.png', 'face3.png', 'face4.png', 'face5.png'] * 2
+houses = ['house1.png', 'house2.png', 'house3.png', 'house4.png', 'house5.png'] * 2
+postCue = ['cue1'] * 5 + ['cue2'] * 5
+
+completeOrder = list(zip(faces, houses, postCue))
+print(completeOrder)
+
+np.random.shuffle(completeOrder)
+print(completeOrder)
+
+#Indexing
+colors = ['red', 'orange', 'yellow', 'green', 'blue', 'purple']
+
+print(colors[-2])
+print(colors[-2][-2] + " " + colors[-2][-1])
+
+colors.remove(colors[-1])
+colors.extend(["indigo", "violet"])
+print(colors)
+
+#slicing
+list100 = list(range(0, 101))
+print(list100)
+print(list100[:10])
+print(list100[99::-2])
+print(list100[:-5:-1])
+print(list100[39] == 39)
+print(list100[43] == 43)
