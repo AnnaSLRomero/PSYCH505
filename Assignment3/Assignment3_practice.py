@@ -36,9 +36,21 @@ numarr*2
 #### STRUGGLING WITH THIS ONE!!
 strlist = ['do', 're', 'mi', 'fa']
 
+print(strlist[0]*2, strlist[1]*2, strlist[2]*2, strlist[3]*2)
 print(strlist * 2)
+print(strlist[0], strlist[0], 
+      strlist[1], strlist[1],
+      strlist[2],strlist[2],
+      strlist[3], strlist[3])
 
-print(strlist + strlist)
+print([strlist[0], strlist[0]], 
+      [strlist[1], strlist[1]],
+      [strlist[2],strlist[2]],
+      [strlist[3], strlist[3]])
+
+
+
+
 
 #zipping - check if this is correct
 faces = ['face1.png', 'face2.png', 'face3.png', 'face4.png', 'face5.png'] * 2
@@ -67,5 +79,8 @@ print(list100)
 print(list100[:10])
 print(list100[99::-2])
 print(list100[:-5:-1])
-print(list100[39] == 39)
+print(list100[39:43] == 39, 40, 41, 42)
+
+
+
 print(list100[43] == 43)
