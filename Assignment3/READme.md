@@ -14,12 +14,16 @@ Only sub_code and subnr_str can create the output 'sub2'. This is because they a
 
 2)
 ```
+#sub2
 print(sub_code + " " + subnr_str)
 
+#sub 222
 print(sub_code + " " + subnr_str*3)
 
+#sub2sub2sub2
 print((sub_code + subnr_str)*3)
 
+#subsubsub222
 print((sub_code*3)+(subnr_str*3))
 ```
 
@@ -39,7 +43,17 @@ In a list when we multiply it by 2, the values in the list are repeated twice, t
 
 3)
 ```
+strlist = ['do', 're', 'mi', 'fa']
 
+#['dodo','rere','mimi','fafa'] 
+print(strlist[0]*2, strlist[1]*2, strlist[2]*2, strlist[3]*2)
+
+#['do','re','mi','fa','do','re','mi','fa'] 
+print(strlist * 2)
+
+#['do','do','re','re','mi','mi','fa','fa'] 
+
+#[['do','do'],['re','re'],['mi','mi'],['fa','fa']]
 ```
 
 ### Zipping exercises
