@@ -30,10 +30,6 @@ numlist * 2
 numarr = np.array([1,2,3])
 numarr*2
 
-#list multiplies the 1,2,3 twice therefore doubling the length, 
-#while in an array the values multiplied by 2, so same length, but the values have changed to 2,4,6.
-
-#### STRUGGLING WITH THIS ONE!!
 strlist = ['do', 're', 'mi', 'fa']
 
 print(strlist[0]*2, strlist[1]*2, strlist[2]*2, strlist[3]*2)
@@ -49,19 +45,35 @@ print([strlist[0], strlist[0]],
       [strlist[3], strlist[3]])
 
 
-
-
-
 #zipping - check if this is correct
-faces = ['face1.png', 'face2.png', 'face3.png', 'face4.png', 'face5.png'] * 2
-houses = ['house1.png', 'house2.png', 'house3.png', 'house4.png', 'house5.png'] * 2
-postCue = ['cue1'] * 5 + ['cue2'] * 5
+faces = ['face1.png', 'face2.png', 'face3.png', 'face4.png', 'face5.png']*5
+houses = ['house1.png', 'house2.png', 'house3.png', 'house4.png', 'house5.png']*5
+postCue = ['cue1'] * 50  + ['cue2'] * 50
+
+
+cat1 = list(zip(faces, houses))
+cat2 = list(zip(houses, faces))
+
+print(cat1)
+print(cat2)
+
+print(faces)
+#houses = ['house1.png', 'house2.png', 'house3.png', 'house4.png', 'house5.png'] * 25
+
+
+np.random.shuffle(faces)
+np.random.shuffle(houses)
+np.random.shuffle(postCue)
+
 
 completeOrder = list(zip(faces, houses, postCue))
 print(completeOrder)
 
+
 np.random.shuffle(completeOrder)
 print(completeOrder)
+
+len(completeOrder)
 
 #Indexing
 colors = ['red', 'orange', 'yellow', 'green', 'blue', 'purple']
@@ -79,8 +91,4 @@ print(list100)
 print(list100[:10])
 print(list100[99::-2])
 print(list100[:-5:-1])
-print(list100[39:43] == 39, 40, 41, 42)
-
-
-
-print(list100[43] == 43)
+print(list100[39:43] == list(range(39,43)))
