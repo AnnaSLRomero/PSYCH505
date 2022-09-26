@@ -50,23 +50,25 @@ faces = ['face1.png', 'face2.png', 'face3.png', 'face4.png', 'face5.png']*5
 houses = ['house1.png', 'house2.png', 'house3.png', 'house4.png', 'house5.png']*5
 postCue = ['cue1'] * 50  + ['cue2'] * 50
 
-
-cat1 = list(zip(faces, houses))
-cat2 = list(zip(houses, faces))
-
-print(cat1)
-print(cat2)
-
-print(faces)
-#houses = ['house1.png', 'house2.png', 'house3.png', 'house4.png', 'house5.png'] * 25
+print(faces[0], houses[0:4])
 
 
-np.random.shuffle(faces)
-np.random.shuffle(houses)
-np.random.shuffle(postCue)
+first_item =[]
+first_item.extend(faces)
+first_item.extend(houses)
+
+second_item = []
+second_item.extend(houses)
+second_item.extend(faces)
+second_item.extend(houses)
+second_item.extend(faces)
 
 
-completeOrder = list(zip(faces, houses, postCue))
+print(first_item)
+print(second_item)
+
+completeOrder = list(zip(first_item, second_item, postCue))
+
 print(completeOrder)
 
 
@@ -91,4 +93,5 @@ print(list100)
 print(list100[:10])
 print(list100[99::-2])
 print(list100[:-5:-1])
-print(list100[39:43] == list(range(39,43)))
+print(list100[39:44] == list(range(39,44)))
+
