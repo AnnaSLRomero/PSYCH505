@@ -124,7 +124,6 @@ print(list100[:-5:-1])
 
 5)
 ```
-print(list100[39] == 39)
-print(list100[43] == 43)
+print(list100[39:43] == list(range(39,43)))
 ```
 Yes, the 40-44th numbers are equal to the integers 39-43
