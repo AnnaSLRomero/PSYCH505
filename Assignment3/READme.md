@@ -35,7 +35,7 @@ numlist * 2
 numarr = np.array([1,2,3])
 numarr*2
 ```
-
+In a list when we multiply it by 2, the values in the list are repeated twice, therefore doubling the length of the list (i.e., from 3 integers it becomes 6 integers). In the array when we multiply it by 2, the integers in the array are multipled by 2, therefore [1,2,3] become [2,4,6]. The length of the array stays the same, but the values of the integers change.
 
 3)
 ```
