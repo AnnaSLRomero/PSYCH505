@@ -52,8 +52,16 @@ print(strlist[0]*2, strlist[1]*2, strlist[2]*2, strlist[3]*2)
 print(strlist * 2)
 
 #['do','do','re','re','mi','mi','fa','fa'] 
+print(strlist[0], strlist[0], 
+      strlist[1], strlist[1],
+      strlist[2],strlist[2],
+      strlist[3], strlist[3])
 
 #[['do','do'],['re','re'],['mi','mi'],['fa','fa']]
+print([strlist[0], strlist[0]], 
+      [strlist[1], strlist[1]],
+      [strlist[2],strlist[2]],
+      [strlist[3], strlist[3]])
 ```
 
 ### Zipping exercises
