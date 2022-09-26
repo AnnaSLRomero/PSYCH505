@@ -119,3 +119,4 @@ print(list100[:-5:-1])
 print(list100[39] == 39)
 print(list100[43] == 43)
 ```
+Yes, the 40-44th numbers are equal to the integers 39-43
