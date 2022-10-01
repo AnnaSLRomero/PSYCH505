@@ -54,22 +54,20 @@ houses = ['house1.png','house2.png','house3.png', 'house4.png', 'house5.png']*5
 postCue = ['cue1'] * 50  + ['cue2'] * 50
 
 first_item = []
-#first_item.extend(faces)
-#first_item.extend(houses)
+first_item.extend(faces)
+first_item.extend(houses)
 first_item.extend(faces)
 first_item.extend(houses)
 #print(first_item)
-#np.random.shuffle(first_item)
 
 #len(first_item)
 
 second_item = []
 second_item.extend(houses)
 second_item.extend(faces)
-#second_item.extend(houses)
-#second_item.extend(faces)
+second_item.extend(houses)
+second_item.extend(faces)
 
-#np.random.shuffle(second_item)
 #print(second_item)
 #len(second_item)
 
