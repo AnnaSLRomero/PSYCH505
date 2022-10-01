@@ -13,7 +13,7 @@ subnr_int = 2
 subnr_str = "2"
 
 print(sub_code + subnr_str)
-print(sub_code + subnr_int)
+#print(sub_code + subnr_int)
 
 print(sub_code + " " + subnr_str)
 
@@ -46,26 +46,33 @@ print([strlist[0], strlist[0]],
 
 
 #zipping - check if this is correct
+#faces = ['face1.png', 'face2.png', 'face3.png', 'face4.png', 'face5.png']*5
+#houses = ['house1.png', 'house2.png', 'house3.png', 'house4.png', 'house5.png']*5
+
 faces = ['face1.png', 'face2.png', 'face3.png', 'face4.png', 'face5.png']*5
-houses = ['house1.png', 'house2.png', 'house3.png', 'house4.png', 'house5.png']*5
+houses = ['house1.png','house2.png','house3.png', 'house4.png', 'house5.png']*5
 postCue = ['cue1'] * 50  + ['cue2'] * 50
 
-print(faces[0], houses[0:4])
-
-
-first_item =[]
+first_item = []
+#first_item.extend(faces)
+#first_item.extend(houses)
 first_item.extend(faces)
 first_item.extend(houses)
+#print(first_item)
+#np.random.shuffle(first_item)
+
+#len(first_item)
 
 second_item = []
 second_item.extend(houses)
 second_item.extend(faces)
-second_item.extend(houses)
-second_item.extend(faces)
+#second_item.extend(houses)
+#second_item.extend(faces)
 
+#np.random.shuffle(second_item)
+#print(second_item)
+#len(second_item)
 
-print(first_item)
-print(second_item)
 
 completeOrder = list(zip(first_item, second_item, postCue))
 
