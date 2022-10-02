@@ -126,10 +126,41 @@ for i in names:
         count = count + 1
         print("This letter has a count of %i" %count)
         
+        
+count = -1
+l = -1
+
+while count < 2 and l < 4:
+    print(names[count][l])
+    print("This letter has a count of %i" %l)
+    count = count + 1
+    l = l + 1
+    
 
 
 ################################While loop exercises ######################
 ##########################################################################
 ##########################################################################
+
+counter = 1
+while counter <= 10:
+    print("image1.png")
+    print(counter)
+    counter = counter + 1
+while counter <= 20:
+    print("image2.png")
+    print(counter)
+    counter = counter + 1
+    
+
+
+response = False
+
+while not response:
+    print("image.png")
+    if int == 1 or 2:
+        response == True
+break
+    
 
     
