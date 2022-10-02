@@ -83,7 +83,37 @@ for i in names:
 
 ## While Loop Exercises
 1)
+```
+counter = 1
+while counter <= 10:
+    print("image1.png")
+    print(counter)
+    counter = counter + 1
+while counter <= 20:
+    print("image2.png")
+    print(counter)
+    counter = counter + 1
+```
 
 2)
+```
+response = False
+while not response:
+    print("image.png")
+    if random.randint(0,3) == 1 or 2:
+        response == True
+```
 
 3)
+```
+response = False
+failsafe = -1
+
+while not response:
+    failsafe = failsafe + 1
+    if failsafe == 5:
+        break
+    print("image.png")
+    if random.randint(0,3) == 1 or 2:
+        response == True
+```        
