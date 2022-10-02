@@ -5,6 +5,8 @@ Created on Sat Oct  1 10:42:48 2022
 
 @author: annaromero
 """
+import random
+
 
 ###########Conditional Exercises#####################
 ######################################################
@@ -155,12 +157,23 @@ while counter <= 20:
 
 
 response = False
+failsafe = -1
 
 while not response:
+    failsafe = failsafe + 1
+    if failsafe == 5:
+        break
     print("image.png")
-    if int == 1 or 2:
+    if random.randint(0,3) == 1 or 2:
         response == True
-break
+        
+response = False
+while not response:
+    print("image.png")
+    if random.randint(0,3) == 1 or 2:
+        response == True
+
+
     
 
     
