@@ -66,15 +66,21 @@ print([strlist[0], strlist[0]],
 
 ### Zipping exercises
 ```
-faces = ['face1.png', 'face2.png', 'face3.png', 'face4.png', 'face5.png'] * 2
-houses = ['house1.png', 'house2.png', 'house3.png', 'house4.png', 'house5.png'] * 2
-postCue = ['cue1'] * 5 + ['cue2'] * 5
+faces = ['face1.png', 'face2.png', 'face3.png', 'face4.png', 'face5.png']*5
+houses = ['house1.png','house2.png','house3.png', 'house4.png', 'house5.png']*5
+postCue = ['cue1'] * 50  + ['cue2'] * 50
 
-completeOrder = list(zip(faces, houses, postCue))
-print(completeOrder)
+first_item = []
+first_item.extend(faces)
+first_item.extend(houses)
+first_item.extend(faces)
+first_item.extend(houses)
 
-np.random.shuffle(completeOrder)
-print(completeOrder)
+second_item = []
+second_item.extend(houses)
+second_item.extend(faces)
+second_item.extend(houses)
+second_item.extend(faces)
 ```
 
 
