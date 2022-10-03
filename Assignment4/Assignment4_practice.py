@@ -282,6 +282,18 @@ while counter <= 20:
     counter = counter + 1
     
 
+response = False
+iteration = 0
+#choice = random.randint(0,3)
+while not response:
+    print("image.png")
+    iteration = iteration + 1
+    print("iteration %i" %iteration)
+    if random.randint(0,3) == 1 or random.randint(0,3) == 2:
+        response == True
+        break
+    
+
 
 response = False
 failsafe = -1
@@ -291,13 +303,14 @@ while not response:
     if failsafe == 5:
         break
     print("image.png")
-    if random.randint(0,3) == 1 or 2:
+    if random.randint(1,2) == 1 or random.randint(1,2) == 2:
         response == True
         
-response = False
+
+esponse = False
 while not response:
     print("image.png")
-    if random.randint(0,3) == 1 or 2:
+    if random.randint(0,3) == 1 or random.randint(0,3) == 2:
         response == True
 
 
