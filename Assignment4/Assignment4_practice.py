@@ -105,7 +105,6 @@ for i in names:
 
 
 
-
 for i in names:
     if i == names[0]:
         print(names[0][0],
