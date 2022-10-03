@@ -70,23 +70,28 @@ print([strlist[0], strlist[0]],
 
 ### Zipping exercises
 ```
-faces = ['face1.png', 'face2.png', 'face3.png', 'face4.png', 'face5.png']*5
-houses = ['house1.png','house2.png','house3.png', 'house4.png', 'house5.png']*5
+f1 = ['face1.png']*5 + ['face2.png']*5 + ['face3.png']*5 + ['face4.png']*5 + ['face5.png']*5
+h1 = ['house1.png']*5 + ['house2.png']*5 + ['house3.png']*5 + ['house4.png']*5 + ['house5.png']*5
+
+
+f2 = ['face1.png', 'face2.png', 'face3.png', 'face4.png', 'face5.png']*5
+h2 = ['house1.png','house2.png','house3.png', 'house4.png', 'house5.png']*5
 postCue = ['cue1'] * 50  + ['cue2'] * 50
 
 first_item = []
-first_item.extend(faces)
-first_item.extend(houses)
-first_item.extend(faces)
-first_item.extend(houses)
+first_item.extend(f1)
+first_item.extend(h1)
+first_item.extend(f1)
+first_item.extend(h1)
 
 second_item = []
-second_item.extend(houses)
-second_item.extend(faces)
-second_item.extend(houses)
-second_item.extend(faces)
+second_item.extend(h2)
+second_item.extend(f2)
+second_item.extend(h2)
+second_item.extend(f2)
 
 completeOrder = list(zip(first_item, second_item, postCue))
+
 np.random.shuffle(completeOrder)
 print(completeOrder)
 ```
