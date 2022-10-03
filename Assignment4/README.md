@@ -96,10 +96,15 @@ while counter <= 20:
 2)
 ```
 response = False
+iteration = 0
+
 while not response:
     print("image.png")
-    if random.randint(0,3) == 1 or 2:
+    iteration = iteration + 1
+    print("iteration %i" %iteration)
+    if random.randint(0,3) == 1 or random.randint(0,3) == 2:
         response == True
+        break
 ```
 
 3)
@@ -112,6 +117,6 @@ while not response:
     if failsafe == 5:
         break
     print("image.png")
-    if random.randint(0,3) == 1 or 2:
+    if random.randint(0,3) == 1 or random.randint(0,3) == 2:
         response == True
 ```        
