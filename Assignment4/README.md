@@ -79,6 +79,51 @@ for i in names:
  ```
 
 4)
+```
+names = ("Amy", "Rory", "River")
+count = 0
+
+for i in names:
+    if i == "Amy":
+        print(names[0][0],
+              "This letter has a count of %i" %count)
+        count = count + 1
+        print(names[0][1],
+              "This letter has a count of %i" %count)
+        count = count + 1
+        print(names[0][2],
+              "This letter has a count of %i" %count)
+        count = 0
+    elif i == "Rory":
+        print(names[1][0],
+              "This letter has a count of %i" %count)
+        count = count + 1
+        print(names[1][1],
+              "This letter has a count of %i" %count)
+        count = count + 1
+        print(names[1][2],
+              "This letter has a count of %i" %count)
+        count = count + 1
+        print(names[1][3],
+              "This letter has a count of %i" %count)
+        count = 0  
+    elif i == "River":
+        print(names[2][0],
+              "This letter has a count of %i" %count)
+        count = count + 1
+        print(names[2][1],
+              "This letter has a count of %i" %count)
+        count = count + 1
+        print(names[2][2],
+              "This letter has a count of %i" %count)
+        count = count + 1
+        print(names[2][3],
+              "This letter has a count of %i" %count)
+        count = count + 1
+        print(names[2][4],
+              "This letter has a count of %i" %count)
+        count = count + 1
+  ```
 
 
 ## While Loop Exercises
