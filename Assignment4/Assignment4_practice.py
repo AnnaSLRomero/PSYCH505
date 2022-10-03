@@ -85,6 +85,11 @@ count = -1
 l = -1
 
 for i in names:
+    if i == names[0]:
+        print(names[])
+
+
+for i in names:
      if names == names[0]:
          l = l + 1
          print(names[count][l])
