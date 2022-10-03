@@ -1,5 +1,9 @@
 # Assignment 3
 
+```
+import numpy as np
+```
+
 ### Variable operations exercises
 1)
 ```
@@ -81,6 +85,10 @@ second_item.extend(houses)
 second_item.extend(faces)
 second_item.extend(houses)
 second_item.extend(faces)
+
+completeOrder = list(zip(first_item, second_item, postCue))
+np.random.shuffle(completeOrder)
+print(completeOrder)
 ```
 
 
