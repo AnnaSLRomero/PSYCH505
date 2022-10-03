@@ -39,6 +39,13 @@ for i in letters:
     count = count + 1
     print("This letter has a count of %i" %count)        
 
+#what Kyle did in class
+myName = 'Anna'
+counter = -1
+for letter in myName:
+    counter = counter + 1
+    print(letter)
+    print(counter)
     
    # name = i
     #print(letters)
@@ -143,6 +150,122 @@ while count < 2 and l < 4:
     l = l + 1
     
 
+    
+names = ("Amy", "Rory", "River")
+count = 0
+
+for i in names:
+    if i == "Amy":
+        print(names[0][0],
+              "This letter has a count of %i" %count)
+        count = count + 1
+        print(names[0][1],
+              "This letter has a count of %i" %count)
+        count = count + 1
+        print(names[0][2],
+              "This letter has a count of %i" %count)
+        count = 0
+    elif i == "Rory":
+        print(names[1][0],
+              "This letter has a count of %i" %count)
+        count = count + 1
+        print(names[1][1],
+              "This letter has a count of %i" %count)
+        count = count + 1
+        print(names[1][2],
+              "This letter has a count of %i" %count)
+        count = count + 1
+        print(names[1][3],
+              "This letter has a count of %i" %count)
+        count = 0  
+    elif i == "River":
+        print(names[2][0],
+              "This letter has a count of %i" %count)
+        count = count + 1
+        print(names[2][1],
+              "This letter has a count of %i" %count)
+        count = count + 1
+        print(names[2][2],
+              "This letter has a count of %i" %count)
+        count = count + 1
+        print(names[2][3],
+              "This letter has a count of %i" %count)
+        count = count + 1
+        print(names[2][4],
+              "This letter has a count of %i" %count)
+        count = count + 1
+        
+        
+names = ("Amy", "Rory", "River")
+n = -1
+l = -1
+    
+for name in names:
+    n = n + 1
+    l = -1
+    for letters in names:
+        l = l + 1
+        print(names[n][l])
+ 
+    ## how Kyle did it
+for name in names:
+    print(name)
+    for letter in name:
+        print(letter)
+        
+for name in names:
+    print(name)
+    letterCount = -1
+    for letter in name:
+        letterCount = letterCount + 1
+        print(letter)
+        print("This letter has a count of %i" %letterCount)
+############################
+    
+    print(name)
+    for letters in names:
+        print(letters)
+    
+    n = n + 1
+    l = -1
+    for letters in names:
+        l = l + 1
+        print(names[n][l])
+    
+   
+    
+   
+    
+   for letters in names:
+        l = l + 1
+        print(names[n][l])
+    
+for letters in names:
+     l = l + 1
+     print(names[n][l])   
+     
+     for name in names:
+         n = n + 1
+         l = 0
+
+    
+   if i == "Amy":
+        print(names[0][0],
+              names[0][1],
+              names[0][2])
+    
+    elif i == "Rory":
+        print(names[1][0],
+              names[1][1],
+              names[1][2],
+              names[1][3])
+    
+    elif i == "River":
+        print(names[2][0],
+              names[2][1],
+              names[2][2],
+              names[2][3],
+              names[2][4])
 
 ################################While loop exercises ######################
 ##########################################################################
