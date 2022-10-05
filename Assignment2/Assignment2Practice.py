@@ -7,6 +7,7 @@ Created on Mon Sep 19 08:58:16 2022
 """
 import numpy as np
 import pprint as pp
+import math
 #Print exercises
 print("A")
 print("N")
@@ -22,6 +23,19 @@ letter4 = "A"
 #yes show up in variable editor
 #no problem with 2 different variables having the same value
 #changing letterX did change the value of that variable
+
+   letter1 = "A"
+   letterX = letter3
+   letter3 = "N"
+   letter4 = "A"
+
+letterX
+letter3
+   
+   letter1 = "A"
+   letterX = "N"
+   letter3 = "Z"
+   letter4 = "A"
 
 #operation exercise
 print(5/2)
@@ -93,8 +107,8 @@ mixtypes = np.array([1, 2, 3.0, 4.0, '5', '6'])
 print(mixtypes)
 #make them all strings
 
-oddarray = np.arange(0, 100, 3)
+oddarray = np.arange(1, 100, 2)
 print(oddarray)
 
-logarray = np.logspace(1, 5, 16)
+logarray = np.logspace(math.log(1), 5, 16)
 print(logarray)
