@@ -3,7 +3,7 @@
 #=====================
 #IMPORT MODULES
 #=====================
-#-import numpy and/or numpy functions *
+#-import numpy as np*
 #-import psychopy functions
 #-import file save functions
 #-(import other functions as necessary: os...)
@@ -26,7 +26,8 @@
 #=====================
 #STIMULUS AND TRIAL SETTINGS
 #=====================
-#-number of trials and blocks *
+#-trials = 2*
+blocks = 10
 #-stimulus names (and stimulus extensions, if images) *
 #-stimulus properties like size, orientation, location, duration *
 #-start message text *
