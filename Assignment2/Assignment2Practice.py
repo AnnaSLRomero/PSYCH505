@@ -110,5 +110,5 @@ print(mixtypes)
 oddarray = np.arange(1, 100, 2)
 print(oddarray)
 
-logarray = np.logspace(math.log(1), 5, 16)
+logarray = np.logspace(0, math.log10(5), 16)
 print(logarray)
