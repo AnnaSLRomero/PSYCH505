@@ -105,10 +105,10 @@ blocks = 10
 #=====================
 #IMPORT MODULES
 #=====================
-#-import numpy and/or numpy functions
-#-import psychopy functions
-#-import file save functions
-#-(import other functions as necessary: os...)
+#-import numpy as np
+#-from psychopy import core, gui, visual, event
+#-import json
+#-import os
 
 ```
 
@@ -116,16 +116,17 @@ blocks = 10
 1)
 
 2)
+```
+```
 
 3)
 ```
 #=====================
 #PATH SETTINGS
 #=====================
-#-define the main directory where you will keep all of your experiment files
-#-define the directory where you will save your data
-#-if you will be presenting images, define the image directory
-#-check that these directories exist
+main_dir = os.getcwd()
+pics_dir = os.path.join(main_dir, 'pics')
+data_dir = os.path_joing(main_dir, 'data')
 
 #=====================
 #PREPARE CONDITION LISTS
