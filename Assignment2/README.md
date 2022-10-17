@@ -193,3 +193,8 @@ print(oddarray)
 logarray = np.logspace(1, 5, 16)
 print(logarray)
 ```
+The correct way to do question 4:
+```
+logarray = np.logspace(0, math.log10(5), 16)
+print(logarray)
+```
