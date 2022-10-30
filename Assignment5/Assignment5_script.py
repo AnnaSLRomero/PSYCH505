@@ -67,6 +67,13 @@ startMesage = "Welcome to the experiment, press any key to begin"
 #PREPARE CONDITION LISTS
 #=====================
 #-check if files to be used during the experiment (e.g., images) exist
+for pic in pics:
+    if pic == image_dir:
+        print("%p was found!" %pic)
+    else:
+        raise Exception("The image lists do not match up!")
+
+
 #-create counterbalanced list of all conditions *
 faces_stim = list(zip(cats, imgs))
 print(faces_stim)
