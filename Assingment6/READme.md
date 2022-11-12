@@ -3,6 +3,7 @@
 from psychopy import gui
 from datetime import datetime
 import os
+from psychopy import visual, monitors
 ```
 ## Dialog box exercises
 1)
