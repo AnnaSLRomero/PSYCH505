@@ -183,50 +183,89 @@ win.close()
 ```
 4)
 ```
+from psychopy import gui
+from datetime import datetime
+import os
+from psychopy import visual, monitors, event
+import numpy as np
+
+nBlocks = 2
+nTrials = 10
+
 #=====================
 #CREATION OF WINDOW AND STIMULI
 #=====================
 #-define experiment start text unsing psychopy functions
+start_msg = "Welcome to my experiment! Press any key."
+start_text = visual.TextStim(win, text = start_msg)
 #-define block (start)/end text using psychopy functions
+block_msg = "Press any key to continue to the next block."
+end_trial_msg = "End of trial"
+block_text = visual.TextStim(win, text = block_msg)
+end_trial_text = visual.TextStim(win, text = end_trial_msg)
 #-define stimuli using psychopy functions (images, fixation cross)
+main_dir = os.getcwd()
+print(main_dir)
+image_dir = os.path.join(main_dir, 'images')
+
+stims = ['face01.jpg', 'face02.jpg', 'face03.jpg', 'face04.jpg', 'face05.jpg',
+         'face06.jpg', 'face07.jpg', 'face08.jpg', 'face09.jpg', 'face10.jpg']
+
+fix_text = visual.TextStim(win, text = "+")
 
 #=====================
 #START EXPERIMENT
 #=====================
 #-present start message text
+start_text.draw()
+win.flip()
 #-allow participant to begin experiment with button press
+event.waitKeys()
 
 #=====================
 #BLOCK SEQUENCE
 #=====================
 #-for loop for nBlocks
+for block in range(nBlocks)
     #-present block start message
+    block_text.draw()
+    win.flip()
+    event.waitKeys()
     #-randomize order of trials here
-    
+    np.random.shuffle(stims)
     #=====================
     #TRIAL SEQUENCE
     #=====================    
     #-for loop for nTrials
+    for trial in range(nTrials)
         #-set stimuli and stimulus properties for the current trial
-        
+        my_image = visual.ImageStim(win, units = "pix", size = (400, 400))
         #=====================
         #START TRIAL
         #=====================  
         #-draw fixation
+        fix_text.draw()
         #-flip window
+        win.flip()
         #-wait time (stimulus duration)
         
         #-draw image
+        my_image.draw()
         #-flip window
+        win.flip()
         #-wait time (stimulus duration)
         
         #-draw end trial text
+        end_trial_text.draw()
         #-flip window
+        win.flip()
         #-wait time (stimulus duration)
         
 #======================
 # END OF EXPERIMENT
 #======================        
 #-close window
-
+win.close()
 ```
+There are some things here we did not learn yet like wait time (stimulus duration). Because of this it is not completely working, I do have a script that
+works in this github repo ([WorkingAssingment6_psychopy.py](https://github.com/AnnaSLRomero/PSYCH505/blob/main/Assignment2/yourname.py), but without the start text. I think I will complete everything and have it all running together in the order at the end.
