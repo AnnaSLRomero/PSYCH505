@@ -90,3 +90,143 @@ win = visual.Window(monitor=mon,
                     color = ["burlywood"], 
                     fullscr = True)
 ```
+
+## Stimulus Exercises
+1)
+```
+main_dir = os.getcwd()
+print(main_dir)
+image_dir = os.path.join(main_dir, 'images')
+
+stims = ['face01.jpg', 'face02.jpg', 'face03.jpg', 'face04.jpg', 'face05.jpg',
+         'face06.jpg', 'face07.jpg', 'face08.jpg', 'face09.jpg', 'face10.jpg']
+nTrials = 10
+my_image = visual.ImageStim(win, units = "pix", size = (400, 400))
+
+np.random.shuffle(stims)
+
+for trial in range(nTrials):
+    my_image.image = os.path.join(image_dir, stims[trial])
+    my_image.draw()
+    win.flip()
+    event.waitKeys()
+win.close()
+```
+To keep the dimensions and change size, it says the best thing to do is change the dimensions before it is even displayed in psychopy and changed in psychopy.
+
+2)
+```
+mon = monitors.Monitor('myMonitor', width = 30.41, distance = 60)
+mon.setSizePix([2500, 1600])
+mon.save()
+
+win = visual.Window(monitor=mon, 
+                    color = ["burlywood"],
+                    fullscr = True)
+                    
+
+main_dir = os.getcwd()
+print(main_dir)
+image_dir = os.path.join(main_dir, 'images')
+
+stims = ['face01.jpg', 'face02.jpg', 'face03.jpg', 'face04.jpg', 'face05.jpg',
+         'face06.jpg', 'face07.jpg', 'face08.jpg', 'face09.jpg', 'face10.jpg']
+
+x_axis = [-360, -360, 360, 360, -360, -360, 360, 360, -360, -360]
+y_axis = [-225, 225, 225, -225, -225, 225, 225, -225, -225, 225]
+#I got these coordinate values from the mon.save(), where it told me that the actual monitor size is [1440, 900], which I split in half 2x to get
+#[360, 225], so that each image stimulus will be in the middle of each quadrant.
+coords = list(zip(x_axis, y_axis))
+
+
+nTrials = 10
+my_image = visual.ImageStim(win, units = "pix", size = (400, 400))
+
+np.random.shuffle(stims)
+
+for trial in range(nTrials):
+    my_image.image = os.path.join(image_dir, stims[trial])
+    my_image.pos = coords[trial]
+    my_image.draw()
+    win.flip()
+    event.waitKeys()
+win.close()
+```
+3)
+```
+main_dir = os.getcwd()
+print(main_dir)
+image_dir = os.path.join(main_dir, 'images')
+
+stims = ['face01.jpg', 'face02.jpg', 'face03.jpg', 'face04.jpg', 'face05.jpg',
+         'face06.jpg', 'face07.jpg', 'face08.jpg', 'face09.jpg', 'face10.jpg']
+
+x_axis = [-360, -360, 360, 360, -360, -360, 360, 360, -360, -360]
+y_axis = [-225, 225, 225, -225, -225, 225, 225, -225, -225, 225,]
+coords = list(zip(x_axis, y_axis))
+
+
+nTrials = 10
+fix_text = visual.TextStim(win, text = "+")
+my_image = visual.ImageStim(win, units = "pix", size = (400, 400))
+
+np.random.shuffle(stims)
+
+for trial in range(nTrials):
+    my_image.image = os.path.join(image_dir, stims[trial])
+    my_image.pos = coords[trial]
+    my_image.draw()
+    fix_text.draw()
+    win.flip()
+    event.waitKeys()
+win.close()
+```
+4)
+```
+#=====================
+#CREATION OF WINDOW AND STIMULI
+#=====================
+#-define experiment start text unsing psychopy functions
+#-define block (start)/end text using psychopy functions
+#-define stimuli using psychopy functions (images, fixation cross)
+
+#=====================
+#START EXPERIMENT
+#=====================
+#-present start message text
+#-allow participant to begin experiment with button press
+
+#=====================
+#BLOCK SEQUENCE
+#=====================
+#-for loop for nBlocks
+    #-present block start message
+    #-randomize order of trials here
+    
+    #=====================
+    #TRIAL SEQUENCE
+    #=====================    
+    #-for loop for nTrials
+        #-set stimuli and stimulus properties for the current trial
+        
+        #=====================
+        #START TRIAL
+        #=====================  
+        #-draw fixation
+        #-flip window
+        #-wait time (stimulus duration)
+        
+        #-draw image
+        #-flip window
+        #-wait time (stimulus duration)
+        
+        #-draw end trial text
+        #-flip window
+        #-wait time (stimulus duration)
+        
+#======================
+# END OF EXPERIMENT
+#======================        
+#-close window
+
+```
