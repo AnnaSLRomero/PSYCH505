@@ -11,7 +11,7 @@
         #-flip window
         win.flip()
         #-wait time (stimulus duration)
-        core.wait(1)
+        core.wait(.5)
         
         #-draw image
         my_image.draw()
@@ -25,7 +25,7 @@
         #-flip window
         win.flip()
         #-wait time (stimulus duration)
-        core.wait(1)
+        core.wait(.5)
 
 ```
 
