@@ -6,16 +6,20 @@
         #START TRIAL
         #===================== 
         #-draw fixation
+        
         #-flip window
         #-wait time (stimulus duration)
+        core.wait(1)
         
         #-draw image
         #-flip window
         #-wait time (stimulus duration)
+        core.wait(1)
         
         #-draw end trial text
         #-flip window
         #-wait time (stimulus duration)
+        core.wait(1)
 
 ```
 
