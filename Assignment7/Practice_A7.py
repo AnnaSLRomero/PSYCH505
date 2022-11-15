@@ -20,30 +20,31 @@ end_trial_text = visual.TextStim(win, text = end_trial_msg)
 fix_text = visual.TextStim(win, text = "+")
 
 wait_timer = core.Clock()
-stimTimer = core.Clock()
+stimTimer = core.CountdownTimer()
 
 for trial in range(nTrials): #loop through trials
     
     my_image.image = os.path.join(image_dir,stims[trial])
     
+    fix_text.draw()
+    win.flip()
+    core.wait(.5)
+    
     stimTimer.reset()
-    
-    while stimTimer.getTime() <= 1:
-        fix_text.draw()
-        win.flip()
-    
+    stimTimer.add(1)
     imgStartTime = wait_timer.getTime()
-    while 1 < stimTimer.getTime() <=2: 
+    while stimTimer.getTime() > 0:
         my_image.draw() #draw
         win.flip() #show
     imgEndTime = wait_timer.getTime()
     
     fix_text.draw()
     win.flip()
+    core.wait(.5)
     
     print("Image duration was {} seconds". format(imgEndTime - imgStartTime))
     
     
-win.close() #close the window after trials have looped    
+win.close() #close the window after trials have looped   
 
 

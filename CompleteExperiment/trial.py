@@ -4,7 +4,7 @@
 #-import numpy and/or numpy functions *
 import numpy as np
 #-import psychopy functions
-from psychopy import core, gui, visual, event, monitors
+from psychopy import core, gui, visual, event, monitors, logging
 #-import file save functions
 import json
 #-(import other functions as necessary: os...)
@@ -138,9 +138,31 @@ event.waitKeys()
 #=====================
 #BLOCK SEQUENCE
 #=====================
-block_timer = core.CountdownTimer()
-trial_timer = core.CountdownTimer()
-wait_timer = core.Clock()
+#block_timer = core.CountdownTimer()
+#trial_timer = core.CountdownTimer()
+#wait_timer = core.Clock()
+
+#=====================
+#FRAME TIMING
+#=====================
+refresh=1.0/60.0
+
+#set durations
+fix_dur = 1 #200 ms
+image_dur = 1 #100 ms
+text_dur = 1 #200 ms
+
+#set frame counts
+fix_frames = int(fix_dur / refresh) #whole number
+image_frames = int(image_dur / refresh) #whole number
+text_frames = int(text_dur / refresh) #whole number
+#the total number of frames to be presented on a trial
+total_frames = int(fix_frames + image_frames + text_frames)
+
+win.recordFrameIntervals = True
+win.refreshThreshold = 1.0/60.0 + 0.004
+logging.console.setLevel(logging.WARNING)
+
 
 #-for loop for nBlocks *
 for block in range(nBlocks):
@@ -151,9 +173,9 @@ for block in range(nBlocks):
     event.waitKeys()
     
     #-reset response time clock here
-    block_timer.reset()
-    block_timer.add(20)
-    blockStartTime = wait_timer.getTime()
+    #block_timer.reset()
+    #block_timer.add(20)
+    #blockStartTime = wait_timer.getTime()
     
     #=====================
     #TRIAL SEQUENCE
@@ -168,40 +190,49 @@ for block in range(nBlocks):
         
         #=====================
         #START TRIAL
-        #=====================   
+        #===================== 
+        for frameN in range(total_frames):
+            if 0 <= frameN <= fix_frames:
        #-draw fixation
-        fix_text.draw()
+                fix_text.draw()
         #-flip window
-        win.flip()
+                win.flip()
         #-wait time (stimulus duration)
-        core.wait(.5)
-        
-        trial_timer.reset()
-        trial_timer.add(1)
-        imgStartTime = wait_timer.getTime()
-        while trial_timer.getTime() > 0:
+        #core.wait(.5)
+                if frameN == fix_frames:
+                    print("End fix frame =", frameN)
+            if fix_frames < frameN <= (fix_frames + image_frames):
+        #trial_timer.reset()
+        #trial_timer.add(1)
+        #imgStartTime = wait_timer.getTime()
+        #while trial_timer.getTime() > 0:
         #-draw image
-            my_image.draw()
+                my_image.draw()
         #-flip window
-            win.flip()
+                win.flip()
         #-wait time (stimulus duration)
-        imgEndTime = wait_timer.getTime()
+        #imgEndTime = wait_timer.getTime()
+                if frameN == (fix_frames + image_frames):
+                    print("End image frame =", frameN)
         
+            if (fix_frames+image_frames) < frameN < total_frames:
         #-draw end trial text
-        end_trial_text.draw()
+                end_trial_text.draw()
         #-flip window
-        win.flip()
+                win.flip()
         #-wait time (stimulus duration)
-        core.wait(.5)
+        #core.wait(.5)
+                if frameN == (total_frames - 1):
+                    print("End text frame =", frameN)
         
         #-collect subject response for that trial
         #-collect subject response time for that trial
         #-collect accuracy for that trial
-        print("Image duration was {} seconds". format(imgEndTime - imgStartTime))
-    
-    blockEndTime = wait_timer.getTime()
-    print("Block duration was {} seconds". format(blockEndTime - blockStartTime))
+        #print("Image duration was {} seconds". format(imgEndTime - imgStartTime))
         
+        print('Overall, %i frames were dropped.' %win.nDroppedFrames)
+    #blockEndTime = wait_timer.getTime()
+    #print("Block duration was {} seconds". format(blockEndTime - blockStartTime))
 #======================
 # END OF EXPERIMENT
 #======================        
