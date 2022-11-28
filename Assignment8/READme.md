@@ -46,7 +46,7 @@ for trial in range(nTrials):
 win.close()
 ```
 2.
-Moving eve.ClearEvents outside and inside the trial loop still ran the code and did only record the first key that was pressed that we want recorded. If no key is pressed or an irrelevant key was pressed in the new trial, there was no key that was printed.
+Moving event.ClearEvents outside and inside the trial loop still ran the code and did only record the first key that was pressed that we want recorded. If no key is pressed or an irrelevant key was pressed in the new trial, there was no key that was printed.
 When I unindented the "if keys:" line, the script does not run because there is an indentation error. But, then when I fix the rest of the code so that the indentation pattern matches, the script will run but the key press is no longer recorded and printed.
 
 
