@@ -46,6 +46,135 @@ for trial in range(nTrials):
 win.close()
 ```
 2.
+### Code with event.ClearEvents outside the loop
+```
+from psychopy import core, event, visual, monitors
+
+mon = monitors.Monitor('myMonitor', width=35.56, distance=60)
+mon.setSizePix([1920, 1080])
+win = visual.Window(monitor=mon, size=(400,400), color=[-1,-1,-1])
+
+nTrials=10
+my_text=visual.TextStim(win)
+
+rt_clock = core.Clock()  # create a response time clock
+cd_timer = core.CountdownTimer() #add countdown timer
+
+event.clearEvents(eventType='keyboard') 
+
+
+for trial in range(nTrials):
+    rt_clock.reset()  # reset timing for every trial
+    cd_timer.add(2) #add 2 seconds
+
+# reset keys for every trial
+    
+    count = -1 #start the counter for the while loop
+    
+    while cd_timer.getTime() > 0: #for 2 seconds
+
+        my_text.text = "trial %i" % trial
+        my_text.draw()
+        win.flip()
+
+        keys = event.getKeys(keyList=['1', '2', 'escape'])  #collect keypresses after first flip
+
+        if keys:
+            count=count+1 #count up the number of times a key is pressed
+            if 'escape' in keys:
+                win.close()
+            if count == 0: #if this is the first time a key is pressed
+                resp_time = rt_clock.getTime() #get RT for first response in that loop
+                sub_resp = keys #get key for only the first response in that loop
+                print(sub_resp, resp_time)
+
+win.close()
+```
+
+### Code with event.ClearEvents inside the loop
+```
+from psychopy import core, event, visual, monitors
+
+mon = monitors.Monitor('myMonitor', width=35.56, distance=60)
+mon.setSizePix([1920, 1080])
+win = visual.Window(monitor=mon, size=(400,400), color=[-1,-1,-1])
+
+nTrials=10
+my_text=visual.TextStim(win)
+
+rt_clock = core.Clock()  # create a response time clock
+cd_timer = core.CountdownTimer() #add countdown timer
+
+
+for trial in range(nTrials):
+    rt_clock.reset()  # reset timing for every trial
+    cd_timer.add(2) #add 2 seconds
+
+# reset keys for every trial
+    
+    count = -1 #start the counter for the while loop
+    event.clearEvents(eventType='keyboard') 
+    while cd_timer.getTime() > 0: #for 2 seconds
+
+        my_text.text = "trial %i" % trial
+        my_text.draw()
+        win.flip()
+
+        keys = event.getKeys(keyList=['1', '2', 'escape'])  #collect keypresses after first flip
+
+        if keys:
+            count=count+1 #count up the number of times a key is pressed
+            if 'escape' in keys:
+                win.close()
+            if count == 0: #if this is the first time a key is pressed
+                resp_time = rt_clock.getTime() #get RT for first response in that loop
+                sub_resp = keys #get key for only the first response in that loop
+                print(sub_resp, resp_time)
+
+win.close()
+```
+### "if keys:" line unindented
+```
+from psychopy import core, event, visual, monitors
+
+mon = monitors.Monitor('myMonitor', width=35.56, distance=60)
+mon.setSizePix([1920, 1080])
+win = visual.Window(monitor=mon, size=(400,400), color=[-1,-1,-1])
+
+nTrials=10
+my_text=visual.TextStim(win)
+
+rt_clock = core.Clock()  # create a response time clock
+cd_timer = core.CountdownTimer() #add countdown timer
+
+
+for trial in range(nTrials):
+    rt_clock.reset()  # reset timing for every trial
+    cd_timer.add(2) #add 2 seconds
+
+# reset keys for every trial
+    
+    count = -1 #start the counter for the while loop
+    event.clearEvents(eventType='keyboard') 
+    while cd_timer.getTime() > 0: #for 2 seconds
+
+        my_text.text = "trial %i" % trial
+        my_text.draw()
+        win.flip()
+
+        keys = event.getKeys(keyList=['1', '2', 'escape'])  #collect keypresses after first flip
+
+if keys:
+   count=count+1 #count up the number of times a key is pressed
+   if 'escape' in keys:
+       win.close()
+   if count == 0: #if this is the first time a key is pressed
+       resp_time = rt_clock.getTime() #get RT for first response in that loop
+       sub_resp = keys #get key for only the first response in that loop
+       print(sub_resp, resp_time)
+
+win.close()
+```
 Moving event.ClearEvents outside and inside the trial loop still ran the code and did only record the first key that was pressed that we want recorded. If no key is pressed or an irrelevant key was pressed in the new trial, there was no key that was printed.
 When I unindented the "if keys:" line, the script does not run because there is an indentation error. But, then when I fix the rest of the code so that the indentation pattern matches, the script will run but the key press is no longer recorded and printed.
 
