@@ -548,6 +548,6 @@ data_dir = os.path.join(main_dir,'exp','data',filename)
 df = pd.read_json(filename+'_block1.txt')
 #print(df)
 
-answered_trials = df.loc[df['sub_acc'] != 0] #show only trials on which subject was correct
+answered_trials = df.loc[df['sub_acc'] != 0] #show only trials on which subject were answered
 print(answered_trials)
 ```
